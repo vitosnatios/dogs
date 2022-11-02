@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useForm from '../../Hooks/useForm';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const username = useForm();
+  const password = useForm();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log({ username, password });
+
     const logar = async () => {
       const res = await fetch(
         'https://dogsapi.origamid.dev/json/jwt-auth/v1/token',
@@ -18,21 +19,27 @@ const LoginForm = () => {
           headers: {
             'Content-type': 'application/json',
           },
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({
+            username: username.value,
+            password: password.value,
+          }),
         }
       );
       const json = await res.json();
       console.log(json);
     };
-    logar();
+
+    if (username.validate() && password.validate()) {
+      logar();
+    }
   };
 
   return (
     <section onSubmit={onSubmit}>
       <h1>Login</h1>
       <form>
-        <Input label='Usuário' type='text' name='username' />
-        <Input label='Senha' type='password' name='password' />
+        <Input label='Usuário' type='text' name='username' {...username} />
+        <Input label='Senha' type='password' name='password' {...password} />
         <Button>Entrar</Button>
       </form>
       <Link to='/login/criar'>Cadastros</Link>
