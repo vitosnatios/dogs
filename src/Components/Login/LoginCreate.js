@@ -24,7 +24,7 @@ const LoginCreate = () => {
         email: email.value,
         password: password.value,
       });
-      const { response, json } = await request(url, options);
+      const { response } = await request(url, options);
 
       if (response.ok) userLogin(username.value, password.value);
     }
