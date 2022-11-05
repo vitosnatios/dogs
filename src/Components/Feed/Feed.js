@@ -14,8 +14,8 @@ const Feed = ({ user }) => {
         const { scrollY } = window;
         const height = document.body.offsetHeight - window.innerHeight;
         if (scrollY > height * 0.75 && wait === false) {
-          wait = true;
           setPages((prev) => [...prev, prev.length + 1]);
+          wait = true;
           setTimeout(() => {
             wait = false;
           }, 500);
