@@ -15,7 +15,7 @@ const FeedModal = ({ photo, setModalPhoto }) => {
 
   useEffect(() => {
     const { url, options } = PHOTO_GET(photo.id);
-    const { response, json } = request(url, options);
+    request(url, options);
   }, [photo, request]);
 
   return (
