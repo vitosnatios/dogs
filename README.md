@@ -1,6 +1,6 @@
 # Dogs (ReactJS)
 Live adress: https://dogs-vitosdeveloper.netlify.app/ \
-Projeto final do curso de ReactJS pela Origamid. \ 
+Projeto final do curso de ReactJS pela Origamid. 
 
 ## Durante esse curso pude aprender e revisar o uso de: 
 
@@ -11,7 +11,7 @@ Hooks:
 - useMemo 
 - useCallback 
 - useContext 
-- custom hooks (useFetch, useForm, etc...) \
+- custom hooks (useFetch, useForm, etc...) 
 
 React router dom:
 - useParams
