@@ -32,5 +32,7 @@ E várias outras coisas como:
 - import / export
 - lazy e suspense
 - Validações de form
+- Jwt
+- Protected Routes
 
 E muuuito mais...
